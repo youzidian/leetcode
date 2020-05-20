@@ -12,21 +12,20 @@ return [0, 1].
 
 import datetime
 print(datetime.datetime.now())
+
+
 class Solution:
     def __init__(self, nums, target):
         self.nums = nums
         self.target = target
     def twoSum(self):
         hashmap = {}
-        count=0
         for k, v in enumerate(nums):
             if target - v in hashmap:
                 # print(nums[hashmap[target - v]], nums[k])
-                print(hashmap[target - v], k)
-                # return [hashmap[target - v], k]
+                # print(hashmap[target - v], k)
+                return [hashmap[target - v], k]
             hashmap[v] = k
-            count+=1
-        print(count,len(nums))
 
     print(datetime.datetime.now())
 
