@@ -15,9 +15,9 @@ class Solution:
         self.s = s
     def replaceSpace(self):
         # print(123)
-        s.replace('a','%20')
-        print(s)
+        string = s.replace(' ','%20')
+        return string
 
 s = "We are happy."
-a=Solution(s)
+a = Solution(s)
 a.replaceSpace()
