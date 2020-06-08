@@ -11,7 +11,7 @@
 """
 
 class Solution:
-    def __init__(self,s):
+    def __init__(self,s,):
         self.s = s
     def replaceSpace(self):
         # print(123)

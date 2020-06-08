@@ -59,13 +59,12 @@ class Solution:
 
     def buildTree(self):
         self.dic = {}
-        self.po = preOrder
+        self.po = self.preOrder
         # print(range(len(preOrder)))
-        for i in range(len(preOrder)):
+        for i in range(len(self.preOrder)):
             self.dic[inOrder[i]] = i
         # print(self.dic)
-        return self.recur(0,0,len(inOrder)-1)
-
+        return self.recur(0, 0, len(inOrder)-1)
 
     def recur(self,pre_root,in_left,in_right):
         # print(pre_root,in_left,in_right)
@@ -82,21 +81,15 @@ class Solution:
         root.left = self.recur(pre_root + 1, in_left, i - 1)  # 开启左子树的下层递归 in_left 和 in_right 是中序排列的区间
         root.right = self.recur(i - in_left + pre_root + 1, i + 1, in_right)  # 开启右子树的下层递归
         # print(self.count,root)
-
+        print(root)
         return root  # 返回根节点，作为上层递归的左（右）子节点
 
 
 
     # def recursion(self):
 
-
-
-
-
-
-
-preOrder = [3, 9, 20, 15, 7]
+pre = [3, 9, 20, 15, 7]
 inOrder = [9, 3, 15, 20, 7]
 count = 0
-a = Solution(preOrder, inOrder,count)
+a = Solution(pre, inOrder,count)
 a.buildTree()

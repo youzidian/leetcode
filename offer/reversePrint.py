@@ -15,36 +15,36 @@
 class Solution:
     def __init__(self, head):
         self.head = head
-    def reversePrint(self):
-        count = 0
-        nums = []
-        nums2 = []
-        # print(head)
-        while head:
-            count += 1
-            nums.append(head.val)
-            head = head.next
-        while count:
-            count -= 1
-            nums2.append(nums[count])
-        return nums2
-
-
     # def reversePrint(self):
-        # nums = []
-        # for i in reversed(head):
-        #     nums.append(i)
-        # return nums
-
-    # def reversePrint(self):
-    #     # print(head[1])
-    #     count = len(head)
+    #     count = 0
     #     nums = []
-    #     while count>0:
+    #     nums2 = []
+    #     # print(head)
+    #     while self.head:
+    #         count += 1
+    #         nums.append(self.head.val)
+    #         head = head.next
+    #     while count:
     #         count -= 1
-    #         # print(head[count])
-    #         nums.append(head[count])
-    #     return nums
+    #         nums2.append(nums[count])
+    #     return nums2
+
+
+    def reversePrint(self):
+        nums = []
+        for i in reversed(head):
+            nums.append(i)
+        return nums
+
+    def reversePrint(self):
+        # print(head[1])
+        count = len(head)
+        nums = []
+        while count>0:
+            count -= 1
+            # print(head[count])
+            nums.append(head[count])
+        return nums
 
 
 head = [1, 3, 2]
