@@ -29,29 +29,29 @@ In the second example, the value of a has already been changed by the time b = a
 class Solution:
 
     # 暴力递归方法
-    def fib(self, n):
-        if n == 0:
-            print('1', n)
-            return 0
-        if n == 1:
-            return 1
-        number = self.fib(n-1)+self.fib(n-2)
-        # print(number)
-        return number
-
+    # def fib(self, n):
+    #     if n == 0:
+    #         print('1', n)
+    #         return 0
+    #     if n == 1:
+    #         return 1
+    #     number = self.fib(n-1)+self.fib(n-2)
+    #     # print(number)
+    #     return number
+    #
 
     # 动态规划 f(n) = f(n-1)+f(n-2)=====>>>f(n+1) = f(n)+f(n-1) 从此而知 可求出 f(n)
-    # def fib(self, n):
-    #     a, b = 0, 1
-    #     # a = 0
-    #     # b = 1
-    #     for _ in range(n):
-    #         a, b = b, a + b
-    #         # c = a + b
-    #         # a = b
-    #         # b = c
-    #         print(a, b)
-    #     return a % 1000000007
+    def fib(self, n):
+        a, b = 0, 1
+        # a = 0
+        # b = 1
+        for _ in range(n):
+            a, b = b, a + b
+            # c = a + b
+            # a = b
+            # b = c
+            print(a, b)
+        return a % 1000000007
 
 a = Solution()
 a.fib(10)
