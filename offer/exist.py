@@ -31,30 +31,38 @@ class Solution:
     def __init__(self, board, word):
         self.board = board
         self.word = board
+
     def exist(self):
-        wordList = [char for char in word]
-        for idx, val in enumerate(wordList):
+        word_list = [char for char in word]
+        occupied_dict = {}
+
+        for idx, val in enumerate(word_list):
             for key, matrix in enumerate(board):
-                if val in matrix and (idx == 0
-                                      or val == right
-                                      or val == left
-                                      or val == down
-                                      or val == up):
+                # print('The element: '+val, 'Which list:  '+str(key), matrix)
+
+                if val in matrix and idx == 0:
                     point = matrix.index(val)
-                    # print(right)
-                    if point == 0 and key == 0:
-                        right = matrix[key+1]
-                        down = board[key+1][key]
-                        print(right, down)
-                    elif point != 0:
-                        right = matrix[key + 1]
-                        down = board[key + 1][key]
-                        up = board[key - 1][key]
-                        left = matrix[key - 1]
-                        print(right, down)
-                else:
-                    return False
-            return True
+                    coordinate = Solution.get_coordinate(self, point, key)
+                    # print(coordinate)
+                    break
+
+                elif val in matrix and (coordinate.get('right') == str(key) + str(point + 1)
+                                        or coordinate.get('down') == str(key + 1) + str(point)):
+                    point = matrix.index(val)
+                    coordinate = Solution.get_coordinate(self, point, key)
+                    break
+                # return '1'
+
+    def get_coordinate(self, point, key):
+        coordinate_point = {}
+        if point == 0 and key == 0:
+            coordinate_point['up'] = ''
+            coordinate_point['down'] = str(key + 1) + str(point)
+            coordinate_point['left'] = ''
+            coordinate_point['right'] = str(key) + str(point + 1)
+        print(point, key, coordinate_point)
+        return coordinate_point
+
 
 board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]]
 word = "ABCCED"
