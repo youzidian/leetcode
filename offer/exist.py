@@ -31,40 +31,142 @@ class Solution:
     def __init__(self, board, word):
         self.board = board
         self.word = board
+        self.word_list = [char for char in word]
 
     def exist(self):
-        word_list = [char for char in word]
-        occupied_dict = {}
+        def dfs(i, j, k):
 
-        for idx, val in enumerate(word_list):
-            for key, matrix in enumerate(board):
-                # print('The element: '+val, 'Which list:  '+str(key), matrix)
+            if not 0 <= i < len(board) or not 0 <= j < len(board[0]) or board[i][j] != word[k]:
+                return False
+            if k == len(word) - 1:
 
-                if val in matrix and idx == 0:
-                    point = matrix.index(val)
-                    coordinate = Solution.get_coordinate(self, point, key)
-                    # print(coordinate)
-                    break
+                return True
+            # tmp, board[i][j] = board[i][j], '/'
+            tmp = board[i][j]
+            board[i][j] = '/'
+            res = dfs(i + 1, j, k + 1) or dfs(i - 1, j, k + 1) or dfs(i, j + 1, k + 1) or dfs(i, j - 1, k + 1)
+            board[i][j] = tmp
+            print(res)
+            return res
 
-                elif val in matrix and (coordinate.get('right') == str(key) + str(point + 1)
-                                        or coordinate.get('down') == str(key + 1) + str(point)):
-                    point = matrix.index(val)
-                    coordinate = Solution.get_coordinate(self, point, key)
-                    break
-                # return '1'
+        for i in range(len(board)):
+            for j in range(len(board[0])):
+                # print(1)
+                if dfs(i, j, 0):
+                    print(1)
+                    return True
+        return False
 
-    def get_coordinate(self, point, key):
-        coordinate_point = {}
-        if point == 0 and key == 0:
-            coordinate_point['up'] = ''
-            coordinate_point['down'] = str(key + 1) + str(point)
-            coordinate_point['left'] = ''
-            coordinate_point['right'] = str(key) + str(point + 1)
-        print(point, key, coordinate_point)
-        return coordinate_point
+        #
+        # def check_positon(self, current_list_position, current_element_position,current_val, next_element):
+        #     # down
+        #     if 0 <= current_list_position < len(board) and 0 <= current_element_position < len(board[0])-1:
+        #         # print(current_list_position,current_element_position,current_val)
+        #         # print(current_list_position, current_element_position, next_element)
+        #         if self.board[current_list_position + 1][current_element_position] == next_element:
+        #             print(1)
+        #             return current_list_position + 1, current_element_position, True
+        #         # right
+        #         elif self.board[current_list_position][current_element_position + 1] == next_element:
+        #             print(2)
+        #             return current_list_position, current_element_position + 1, True
+        #         # left
+        #         elif self.board[current_list_position][current_element_position - 1] == next_element:
+        #             print(3)
+        #             return current_list_position, current_element_position - 1, True
+        #         # up
+        #         elif self.board[current_list_position - 1][current_element_position] == next_element:
+        #             print(4)
+        #             return current_list_position - 1, current_element_position, True
+        #     else:
+        #         return False
+        #
+        #
+        #
+        # # current_list_position=0
+        # # current_element_position=0
+        # for idx, val in enumerate(self.word_list):
+        #     for key, matrix in enumerate(board):
+        #         if val in matrix:
+        #
+        #             # print(val, matrix)
+        #             a, b,is_valid = check_positon(self, key, idx,val, self.word_list[idx+1])
+        #             # print(a, b,is_valid)
+        #             if is_valid:
+        #                 break
+        #             else:
+        #                 continue
+
+        # 循环 word_list
+        # current_list_position=0
+        # current_element_position=0
+        # for idx, val in enumerate(word_list):
+        #     i = 0
+        #     while i in range(i, len(board)):
+        #         if val in board[i]:
+        #             current_list_position, current_element_position = Solution.check_positon(self, current_list_position,
+        #                                                                                      current_element_position,
+        #                                                                                   word_list[idx + 1])
+        #         i += 1
 
 
-board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]]
+
+
+
+
+
+
+
+        #     if val in board[idx] and is_valid_position:
+        #         print(val)
+        #         current_list_position = key
+        #         current_element_position = matrix.index(val)
+        #         next_element = word_list[idx+1]
+        #         is_valid_position = Solution.check_positon(self, current_list_position, current_element_position,next_element)
+        #         # print(val, is_valid_position)
+
+
+
+
+
+
+
+
+
+
+    #             if val in matrix and idx == 0:
+    #                 point = matrix.index(val)
+    #                 coordinate = Solution.get_coordinate(self, point, key)
+    #                 # print(coordinate)
+    #                 break
+    #
+    #             elif val in matrix and (coordinate.get('right') == str(key) + str(point + 1)
+    #                                     or coordinate.get('down') == str(key + 1) + str(point)):
+    #                 point = matrix.index(val)
+    #                 coordinate = Solution.get_coordinate(self, point, key)
+    #                 break
+    #             # return '1'
+    #
+    # def get_coordinate(self, point, key):
+    #     coordinate_point = {}
+    #     if point == 0 and key == 0:
+    #         coordinate_point['up'] = ''
+    #         coordinate_point['down'] = str(key + 1) + str(point)
+    #         coordinate_point['left'] = ''
+    #         coordinate_point['right'] = str(key) + str(point + 1)
+    #     print(point, key, coordinate_point)
+    #     return coordinate_point
+
+
+
+
+
+
+
+
+board = [["A","B","C","E"],
+         ["S","F","C","S"],
+         ["A","D","E","E"]]
 word = "ABCCED"
 # board = [["a","b"],["c","d"]]
 # word = "abcd"
