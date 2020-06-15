@@ -35,25 +35,23 @@ class Solution:
 
     def exist(self):
         def dfs(i, j, k):
-
+            # print(len(board), len(board[0]), board[i][j], word[k])
             if not 0 <= i < len(board) or not 0 <= j < len(board[0]) or board[i][j] != word[k]:
                 return False
             if k == len(word) - 1:
-
                 return True
             # tmp, board[i][j] = board[i][j], '/'
             tmp = board[i][j]
             board[i][j] = '/'
             res = dfs(i + 1, j, k + 1) or dfs(i - 1, j, k + 1) or dfs(i, j + 1, k + 1) or dfs(i, j - 1, k + 1)
             board[i][j] = tmp
-            print(res)
+            # print(res)
             return res
 
         for i in range(len(board)):
             for j in range(len(board[0])):
                 # print(1)
                 if dfs(i, j, 0):
-                    print(1)
                     return True
         return False
 
@@ -164,11 +162,15 @@ class Solution:
 
 
 
-board = [["A","B","C","E"],
-         ["S","F","C","S"],
-         ["A","D","E","E"]]
-word = "ABCCED"
+# board = [["A","B","C","E"],
+#          ["S","F","C","S"],
+#          ["A","D","E","E"]]
+# word = "ABCCED"
 # board = [["a","b"],["c","d"]]
 # word = "abcd"
+board = [["C","A","A"],["A","A","A"],["B","C","D"]]
+word = "AAB"
+
+
 a = Solution(board, word)
 a.exist()
