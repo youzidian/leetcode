@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="749ad069-80fd-4c21-a6fd-e1eae8c97d6a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/alien_invation/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/alien_invation/alien_invation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/alien_invation/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/alien_invation/ship.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/pip-selfcheck.json" beforeDir="false" afterPath="$PROJECT_DIR$/venv/pip-selfcheck.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alien_invation/alien_invation.py" beforeDir="false" afterPath="$PROJECT_DIR$/alien_invation/alien_invation.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +23,7 @@
     <SUITE FILE_PATH="coverage/leetCode$twoSum.coverage" NAME="twoSum Coverage Results" MODIFIED="1590027288641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/top100" />
     <SUITE FILE_PATH="coverage/leetCode$logging_test.coverage" NAME="logging_test Coverage Results" MODIFIED="1594175947396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/self_learn" />
     <SUITE FILE_PATH="coverage/leetCode$logging.coverage" NAME="logging Coverage Results" MODIFIED="1594175907312" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/self_learn" />
+    <SUITE FILE_PATH="coverage/leetCode$ship.coverage" NAME="ship Coverage Results" MODIFIED="1594362602134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/alien_invation" />
     <SUITE FILE_PATH="coverage/leetCode$reversePrint.coverage" NAME="reversePrint Coverage Results" MODIFIED="1591587520986" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/offer" />
     <SUITE FILE_PATH="coverage/leetCode$buildTree.coverage" NAME="buildTree Coverage Results" MODIFIED="1591335915242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/offer" />
     <SUITE FILE_PATH="coverage/leetCode$findNumberIn2DArray.coverage" NAME="findNumberIn2DArray Coverage Results" MODIFIED="1590052551089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/offer" />
@@ -35,7 +34,7 @@
     <SUITE FILE_PATH="coverage/leetCode$replaceSpace.coverage" NAME="replaceSpace Coverage Results" MODIFIED="1591335789872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/offer" />
     <SUITE FILE_PATH="coverage/leetCode$myPow.coverage" NAME="myPow Coverage Results" MODIFIED="1592454043882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/offer" />
     <SUITE FILE_PATH="coverage/leetCode$zen.coverage" NAME="zen Coverage Results" MODIFIED="1592794313635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/selflearn" />
-    <SUITE FILE_PATH="coverage/leetCode$alien_invation.coverage" NAME="alien_invation Coverage Results" MODIFIED="1594281076773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/alien_invation" />
+    <SUITE FILE_PATH="coverage/leetCode$alien_invation.coverage" NAME="alien_invation Coverage Results" MODIFIED="1594366100106" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/alien_invation" />
     <SUITE FILE_PATH="coverage/leetCode$test.coverage" NAME="test Coverage Results" MODIFIED="1592298698654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/offer" />
     <SUITE FILE_PATH="coverage/leetCode$zen__1_.coverage" NAME="zen (1) Coverage Results" MODIFIED="1593748654621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/self_learn" />
   </component>
@@ -56,28 +55,28 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="notes" value="1" />
-          <entry key="py" value="30" />
+          <entry key="py" value="31" />
           <entry key="python_1" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="30" />
+          <entry key="Python" value="31" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="16" />
           <entry key="notes" value="42" />
-          <entry key="py" value="17716" />
+          <entry key="py" value="18445" />
           <entry key="python_1" value="66" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="124" />
-          <entry key="Python" value="17716" />
+          <entry key="Python" value="18445" />
         </counts>
       </usages-collector>
     </session>
@@ -135,11 +134,23 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/alien_invation/alien_invation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+            <state relative-caret-position="510">
+              <caret line="30" column="17" lean-forward="true" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-                <marker date="1594281075103" expanded="true" signature="84:89" ph="..." />
+                <marker date="1594366099995" expanded="true" signature="96:101" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/alien_invation/ship.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="42" lean-forward="true" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+              <folding>
+                <marker date="1594362602113" expanded="true" signature="28:33" ph="..." />
               </folding>
             </state>
           </provider>
@@ -158,15 +169,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/offer/recursion.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/codecs.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="5627">
@@ -178,7 +180,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/offer/buildTree.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1139">
+            <state relative-caret-position="622">
               <caret line="67" selection-start-line="66" selection-start-column="26" selection-end-line="67" />
             </state>
           </provider>
@@ -231,6 +233,7 @@
         <option value="$PROJECT_DIR$/self_learn/zen.py" />
         <option value="$PROJECT_DIR$/self_learn/logging.py" />
         <option value="$PROJECT_DIR$/alien_invation/settings.py" />
+        <option value="$PROJECT_DIR$/alien_invation/ship.py" />
         <option value="$PROJECT_DIR$/alien_invation/alien_invation.py" />
       </list>
     </option>
@@ -267,6 +270,12 @@
               <item name="leetCode" type="b2602c69:ProjectViewProjectNode" />
               <item name="leetCode" type="462c0819:PsiDirectoryNode" />
               <item name="alien_invation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="leetCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="leetCode" type="462c0819:PsiDirectoryNode" />
+              <item name="alien_invation" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -360,6 +369,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="ship" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="leetCode" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/alien_invation" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/alien_invation/ship.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="zen (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="leetCode" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -382,42 +413,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="zen" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="leetCode" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/selflearn" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/selflearn/zen.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Python.zen" />
       <item itemvalue="Python.zen (1)" />
       <item itemvalue="Python.logging" />
       <item itemvalue="Python.logging_test" />
       <item itemvalue="Python.alien_invation" />
+      <item itemvalue="Python.ship" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.alien_invation" />
+        <item itemvalue="Python.ship" />
         <item itemvalue="Python.logging_test" />
         <item itemvalue="Python.logging" />
         <item itemvalue="Python.zen (1)" />
-        <item itemvalue="Python.zen" />
       </list>
     </recent_temporary>
   </component>
@@ -443,13 +452,13 @@
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
-      <window_info anchor="bottom" content_ui="combo" id="Project" order="3" weight="0.15407854" />
+      <window_info anchor="bottom" content_ui="combo" id="Project" order="3" weight="0.29103726" />
       <window_info anchor="bottom" id="Python Console" order="4" weight="0.3299748" />
       <window_info anchor="bottom" id="Terminal" order="5" />
       <window_info anchor="bottom" id="Event Log" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Find" order="8" />
-      <window_info active="true" anchor="bottom" id="Run" order="9" visible="true" weight="0.25176233" />
+      <window_info active="true" anchor="bottom" id="Run" order="9" visible="true" weight="0.24169184" />
       <window_info anchor="bottom" id="Debug" order="10" weight="0.2254408" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
@@ -751,13 +760,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/offer/buildTree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="67" selection-start-line="66" selection-start-column="26" selection-end-line="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/self_learn/zen.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -806,13 +808,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/offer/buildTree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="622">
+          <caret line="67" selection-start-line="66" selection-start-column="26" selection-end-line="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/alien_invation/ship.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="42" lean-forward="true" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+          <folding>
+            <marker date="1594362602113" expanded="true" signature="28:33" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/alien_invation/alien_invation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+        <state relative-caret-position="510">
+          <caret line="30" column="17" lean-forward="true" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <marker date="1594281075103" expanded="true" signature="84:89" ph="..." />
+            <marker date="1594366099995" expanded="true" signature="96:101" ph="..." />
           </folding>
         </state>
       </provider>
